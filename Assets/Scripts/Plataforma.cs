@@ -8,7 +8,10 @@ public class Plataforma : MonoBehaviour {
     public float limiteDaTelaEmX;
 	// Use this for initialization
 	void Start () {
-		
+
+        limiteDaTelaEmX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width,0,0)).x - GetComponent<SpriteRenderer>().bounds.extents.x; 
+        // limite da tela(largura em x) - a metade da largura da plataforma,faz se isso para que a plataforma não fique com a metade fora da tela.
+
 	}
 	
 	// Update is called once per frame
